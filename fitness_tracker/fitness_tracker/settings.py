@@ -141,8 +141,8 @@ REST_FRAMEWORK = {
 }
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'borovskiytest@gmail.com'
-EMAIL_HOST_PASSWORD = 'zjyddjidzpnfgkya'
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
 EMAIL_PORT = '587'
 
 DJOSER = {
