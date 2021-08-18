@@ -42,8 +42,9 @@ class UserActiveViewSet(viewsets.ModelViewSet):
             start_datetime = finish_datetime - datetime.timedelta(hours=1)
         elif hour:
             start_datetime = finish_datetime - datetime.timedelta(days=1)
-        active_user_ago = UserActivity.objects.select_related('user').filter(start_of_activity__range=(start_datetime, finish_datetime),
-                                                      user=self.request.user)
+        active_user_ago = UserActivity.objects.select_related('user').filter(
+            start_of_activity__range=(start_datetime, finish_datetime),
+            user=self.request.user)
         return UserActivSerializer(active_user_ago, many=True)
 
     @decorators.action(detail=False, permission_classes=[permissions.IsAuthenticated])

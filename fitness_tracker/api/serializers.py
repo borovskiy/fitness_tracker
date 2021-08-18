@@ -11,11 +11,13 @@ class UserSerializer(serializers.ModelSerializer):
 
 class UserActivSerializer(serializers.ModelSerializer):
     user = UserSerializer()
+
     class Meta:
         model = UserActivity
         fields = ('id', 'user', 'start_of_activity', 'end_of_activity', 'type_active', 'distance', 'calorie_count',)
 
+
 class CreateActivSerializer(serializers.ModelSerializer):
     class Meta:
         model = UserActivity
-        fields = ('id','start_of_activity', 'end_of_activity', 'type_active', 'distance', 'calorie_count',)
+        fields = ('id', 'start_of_activity', 'end_of_activity', 'type_active', 'distance', 'calorie_count',)
