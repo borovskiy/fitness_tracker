@@ -9,6 +9,7 @@ ACTIVITY_TYPES = (
 
 
 class UserActivity(models.Model):
+    """Модель активности пользователя"""
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='users')
     start_of_activity = models.DateTimeField(verbose_name='Начало активности')
     end_of_activity = models.DateTimeField(verbose_name='Конец активности')
